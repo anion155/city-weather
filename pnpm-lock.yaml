@@ -10,6 +10,7 @@ devDependencies:
   '@rollup/plugin-alias': 3.1.0_rollup@2.8.2
   '@rollup/plugin-commonjs': 11.1.0_rollup@2.8.2
   '@rollup/plugin-html': 0.2.0_rollup@2.8.2
+  '@rollup/plugin-image': 2.0.4_rollup@2.8.2
   '@rollup/plugin-json': 4.0.3_rollup@2.8.2
   '@rollup/plugin-node-resolve': 7.1.3_rollup@2.8.2
   '@rollup/plugin-replace': 2.3.2_rollup@2.8.2
@@ -29,7 +30,6 @@ devDependencies:
   postcss-preset-env: 6.7.0
   react: 16.13.1
   rollup: 2.8.2
-  rollup-plugin-copy: 3.3.0
   rollup-plugin-delete: 1.2.0_rollup@2.8.2
   rollup-plugin-dev: 1.1.2
   rollup-plugin-livereload: 1.3.0
@@ -1014,6 +1014,18 @@ packages:
       rollup: ^1.20.0||^2.0.0
     resolution:
       integrity: sha512-aT73feaTUmJIQ45K61+5pL9GE5IYgHi0SvQ+yhQfPG1HoDlPnIjk3af9IA/DxJ+8ZlWDWFcN3pik0VavWF88hw==
+  /@rollup/plugin-image/2.0.4_rollup@2.8.2:
+    dependencies:
+      '@rollup/pluginutils': 3.0.10_rollup@2.8.2
+      mini-svg-data-uri: 1.2.3
+      rollup: 2.8.2
+    dev: true
+    engines:
+      node: '>= 8.0.0'
+    peerDependencies:
+      rollup: ^1.20.0
+    resolution:
+      integrity: sha512-W23bfKBZw/k6MXks0PInxazHhbfiN5u2ySPMHFVPt2jgmACNewlV3kUR6MvpE9YEliETU5ygGetsj5SDTUW4HQ==
   /@rollup/plugin-json/4.0.3_rollup@2.8.2:
     dependencies:
       '@rollup/pluginutils': 3.0.10_rollup@2.8.2
@@ -1135,12 +1147,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-EaObqwIvayI5a8dCzhFrjKzVwKLxjoG9T6Ppd5CEo07LRKfQ8Yokw54r5+Wq7FaBQ+yXRvQAYPrHwya1/UFt9g==
-  /@types/fs-extra/8.1.0:
-    dependencies:
-      '@types/node': 13.13.5
-    dev: true
-    resolution:
-      integrity: sha512-UoOfVEzAUpeSPmjm7h1uk5MH6KZma2z2O7a75onTGjnNvAvMVrPzPL/vBbT65iIGHWj6rokwfmYcmxmlSf2uwg==
   /@types/glob/7.1.1:
     dependencies:
       '@types/events': 3.0.0
@@ -2727,16 +2733,6 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=
-  /fs-extra/8.1.0:
-    dependencies:
-      graceful-fs: 4.2.4
-      jsonfile: 4.0.0
-      universalify: 0.1.2
-    dev: true
-    engines:
-      node: '>=6 <7 || >=8'
-    resolution:
-      integrity: sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==
   /fs.realpath/1.0.0:
     dev: true
     resolution:
@@ -2827,21 +2823,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-BWICuzzDvDoH54NHKCseDanAhE3CeDorgDL5MT6LMXXj2WCnd9UC2szdk4AWLfjdgNBCXLUanXYcpBBKOSWGwg==
-  /globby/10.0.1:
-    dependencies:
-      '@types/glob': 7.1.1
-      array-union: 2.1.0
-      dir-glob: 3.0.1
-      fast-glob: 3.2.2
-      glob: 7.1.6
-      ignore: 5.1.4
-      merge2: 1.3.0
-      slash: 3.0.0
-    dev: true
-    engines:
-      node: '>=8'
-    resolution:
-      integrity: sha512-sSs4inE1FB2YQiymcmTv6NWENryABjUNPeWhOvmn4SjtKybglsyPZxFB3U1/+L1bYi0rNZDqCLlHyLYDl1Pq5A==
   /globby/11.0.0:
     dependencies:
       array-union: 2.1.0
@@ -2880,10 +2861,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-otgSPpUmdWJ43VXyiNgEYE4luzHCL2pz4wQ0OnDluC6Eg4Ko3Vexy/SrSynglw/eR+OhkzmqFCZa/OFa/RgAOQ==
-  /graceful-fs/4.2.4:
-    dev: true
-    resolution:
-      integrity: sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
   /gud/1.0.0:
     dev: false
     resolution:
@@ -3350,14 +3327,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-YWnfyRwxL/+SsrWYfOpUtz5b3YD+nyfkHvjbcanzk8zgyO4ASD67uVMRt8k5bM4lLMDnXfriRhOpemw+NfT1eA==
-  /is-plain-object/3.0.0:
-    dependencies:
-      isobject: 4.0.0
-    dev: true
-    engines:
-      node: '>=0.10.0'
-    resolution:
-      integrity: sha512-tZIpofR+P05k8Aocp7UI/2UTa9lTJSebCXpFFoR9aibpokDj/uXBsJ8luUu0tTVYKkMU6URDUuOfJZ7koewXvg==
   /is-reference/1.1.4:
     dependencies:
       '@types/estree': 0.0.39
@@ -3423,12 +3392,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=
-  /isobject/4.0.0:
-    dev: true
-    engines:
-      node: '>=0.10.0'
-    resolution:
-      integrity: sha512-S/2fF5wH8SJA/kmwr6HYhK/RI/OkhD84k8ntalo0iJjZikgq1XFvR5M8NPT1x5F7fBwCG3qHfnzeP/Vh/ZxCUA==
   /isstream/0.1.2:
     dev: true
     resolution:
@@ -3483,12 +3446,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-KXPvOm8K9IJKFM0bmdn8QXh7udDh1g/giieX0NLCaMnb4hEiVFqnop2ImTXCc5e0/oHz3LTqmHGtExn5hfMkOA==
-  /jsonfile/4.0.0:
-    dev: true
-    optionalDependencies:
-      graceful-fs: 4.2.4
-    resolution:
-      integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
   /jsx-ast-utils/2.2.3:
     dependencies:
       array-includes: 3.1.1
@@ -3882,6 +3839,10 @@ packages:
       react: ^0.14.0 || ^15.0.0 || ^16.0.0
     resolution:
       integrity: sha512-2v+OeetEyliMt5VHMXsBhABoJ0/M4RCe7fatd/fBy6SMiKazUSEt3gxxypfnk2SHMkdBYvorHRoQxuGoiwbzAw==
+  /mini-svg-data-uri/1.2.3:
+    dev: true
+    resolution:
+      integrity: sha512-zd6KCAyXgmq6FV1mR10oKXYtvmA9vRoB6xPSTUJTbFApCtkefDnYueVR1gkof3KcdLZo1Y8mjF2DFmQMIxsHNQ==
   /minimatch/3.0.4:
     dependencies:
       brace-expansion: 1.1.11
@@ -5469,18 +5430,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==
-  /rollup-plugin-copy/3.3.0:
-    dependencies:
-      '@types/fs-extra': 8.1.0
-      colorette: 1.1.0
-      fs-extra: 8.1.0
-      globby: 10.0.1
-      is-plain-object: 3.0.0
-    dev: true
-    engines:
-      node: '>=8.3'
-    resolution:
-      integrity: sha512-euDjCUSBXZa06nqnwCNADbkAcYDfzwowfZQkto9K/TFhiH+QG7I4PUsEMwM9tDgomGWJc//z7KLW8t+tZwxADA==
   /rollup-plugin-delete/1.2.0_rollup@2.8.2:
     dependencies:
       del: 4.1.1
@@ -6285,12 +6234,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-HoHNhGnKj6y+Sq+7ASo2zpVdfdRifhTgX2KTU3B/sO/TTlZchp7E3S4vjRzDJ7L60KmrCPsQkVK3lEF3cz36XQ==
-  /universalify/0.1.2:
-    dev: true
-    engines:
-      node: '>= 4.0.0'
-    resolution:
-      integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
   /unpipe/1.0.0:
     dev: true
     engines:
@@ -6472,6 +6415,7 @@ specifiers:
   '@rollup/plugin-alias': ^3.1.0
   '@rollup/plugin-commonjs': ^11.1.0
   '@rollup/plugin-html': ^0.2.0
+  '@rollup/plugin-image': ^2.0.4
   '@rollup/plugin-json': ^4.0.3
   '@rollup/plugin-node-resolve': ^7.1.3
   '@rollup/plugin-replace': ^2.3.2
@@ -6498,7 +6442,6 @@ specifiers:
   react-router-dom: ^5.1.2
   react-select: ^3.1.0
   rollup: ^2.8.2
-  rollup-plugin-copy: ^3.3.0
   rollup-plugin-delete: ^1.2.0
   rollup-plugin-dev: ^1.1.2
   rollup-plugin-livereload: ^1.3.0

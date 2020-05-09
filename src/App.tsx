@@ -9,9 +9,14 @@ import { CitySelector } from './components/CitySelector';
 import { CityQuery, useOpenWeatherForecast, Units, OpenWeatherResult } from './OpenWeatherService';
 import { WeatherResult } from './components/WeatherResult';
 import { History } from './components/History';
+import Background from './assets/background.png';
+import En from './assets/en.png';
+import Ru from './assets/ru.png';
 
 export function App() {
   const { t, i18n } = useTranslation();
+  const onRUClick = React.useCallback(() => i18n.changeLanguage('ru'), [ i18n ]);
+  const onENClick = React.useCallback(() => i18n.changeLanguage('en'), [ i18n ]);
 
   const [ results, setResults ] = React.useState<OpenWeatherResult[]>([ ]);
   const clean = React.useCallback(() => {
@@ -57,9 +62,19 @@ export function App() {
               <FaHistory />
               <span>{t('Navigation.history')}</span>
             </NavLink>
+            <div className='App-navigation-content-langs'>
+              <div className='App-navigation-content-flags'>
+                <div onClick={onRUClick}>
+                  <img src={Ru} />
+                </div>
+                <div onClick={onENClick}>
+                  <img src={En} />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div className='App-content'>
+        <div className='App-content' style={{ backgroundImage: `url(${Background})` }}>
           <Switch>
             <Route path='/history'>
               <div className='App-panel'>

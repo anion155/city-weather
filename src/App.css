@@ -23,6 +23,29 @@
   overflow: hidden;
 }
 
+.App-navigation-content-langs {
+  flex: 1;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: end;
+}
+
+.App-navigation-content-flags {
+  display: flex;
+  flex-direction: row;
+  width: 60px;
+  justify-content: center;
+}
+
+.App-navigation-content-flags div {
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.App-navigation-content-flags div:last-child {
+  padding-right: 0;
+}
+
 .App-navigation-content:hover {
   width: 240px;
 }
@@ -65,7 +88,6 @@
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  background-image: url('./background.png');
   background-size: cover;
 }
 
@@ -122,5 +144,9 @@
 
   .App-panel {
     max-width: calc(100vw - 40px);
+  }
+
+  .App-navigation-content-langs {
+    display: none;
   }
 }
