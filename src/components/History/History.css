@@ -1,0 +1,25 @@
+.History-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.History-header-button {
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.History-header-button:hover {
+  color: lightgrey;
+}
+
+.History-header-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.History-header-filler {
+  flex: 1;
+}
