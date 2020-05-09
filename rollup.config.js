@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import del from 'rollup-plugin-delete';
+import alias from '@rollup/plugin-alias';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
@@ -7,6 +8,7 @@ import typescript from '@wessberg/rollup-plugin-ts';
 import json from '@rollup/plugin-json';
 import replace from '@rollup/plugin-replace';
 import html from '@rollup/plugin-html';
+import copy from 'rollup-plugin-copy';
 import dev from 'rollup-plugin-dev';
 import livereload from 'rollup-plugin-livereload';
 
@@ -32,6 +34,12 @@ const config = {
   plugins: [
     PRODUCTION && del({
       targets: 'dist/*',
+    }),
+    alias({
+      entries: [
+        { find: 'react-router', replacement: 'react-router/esm/react-router.js' },
+        { find: 'react-is', replacement: 'react-is/cjs/react-is.production.min.js' },
+      ],
     }),
     nodeResolve({
       browser: true,
@@ -68,8 +76,18 @@ const config = {
       'build.DEV': process.env.NODE_ENV === 'development',
       'build.OPENWEATHER_APPID': JSON.stringify(process.env.OPENWEATHER_APPID),
     }),
-    html(),
-    WATCH && dev('dist'),
+    html({
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
+      ],
+    }),
+    copy({
+      targets: [
+        { src: 'src/assets/background.png', dest: 'dist' },
+      ],
+    }),
+    WATCH && dev({ dirs: [ 'dist' ], spa: 'dist/index.html' }),
     WATCH && livereload({
       watch: 'dist',
     }),
