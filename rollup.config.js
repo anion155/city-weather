@@ -4,6 +4,7 @@ import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 import typescript from '@wessberg/rollup-plugin-ts';
+import json from '@rollup/plugin-json';
 import replace from '@rollup/plugin-replace';
 import html from '@rollup/plugin-html';
 import dev from 'rollup-plugin-dev';
@@ -51,6 +52,9 @@ const config = {
         'react-dom': Object.keys(require('react-dom')),
       },
     }),
+    json({
+      preferConst: true,
+    }),
     postcss({
       plugins: [
         stylelint(),
@@ -61,6 +65,7 @@ const config = {
     typescript(),
     replace({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+      'build.DEV': process.env.NODE_ENV === 'development',
     }),
     html(),
     WATCH && dev('dist'),
