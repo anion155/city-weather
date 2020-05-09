@@ -66,6 +66,7 @@ const config = {
     replace({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
       'build.DEV': process.env.NODE_ENV === 'development',
+      'build.OPENWEATHER_APPID': JSON.stringify(process.env.OPENWEATHER_APPID),
     }),
     html(),
     WATCH && dev('dist'),
