@@ -47,9 +47,11 @@ export function History({ results, clean }: HistoryProps) {
           <FaTrashAlt />
         </a>
       </div>
-      {sorted.map(result => (
-        <WeatherResult key={result.date} result={result} expand={expanded === result.date} onClick={() => toggleExpanded(result.date)} />
-      ))}
+      <div className='History-items'>
+        {sorted.map(result => (
+          <WeatherResult key={result.date} result={result} expand={expanded === result.date} onClick={() => toggleExpanded(result.date)} />
+        ))}
+      </div>
     </div>
   );
 }

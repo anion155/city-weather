@@ -23,3 +23,13 @@
 .History-header-filler {
   flex: 1;
 }
+
+.History-items .WeatherResult {
+  padding-bottom: 5px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.History-items .WeatherResult:last-child {
+  padding-bottom: unset;
+  border-bottom: unset;
+}

@@ -34,6 +34,12 @@ export function CitySelector({ onCityQueryChange, onChange: onChangeProp, ...pro
   }, [ onCityQueryChange, onChangeProp ]);
 
   return (
-    <Select {...props} options={cityOptions} onChange={onChange} />
+    <Select
+      {...props}
+      options={cityOptions}
+      onChange={onChange}
+      menuPortalTarget={document.body}
+      styles={{ menuPortal: (base) => ({ ...base, zIndex: 520 }) }}
+    />
   );
 }

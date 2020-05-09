@@ -12,5 +12,9 @@
       "pressure": "Atmosphere pressure:",
       "pressureValue": "${{value}} hPa"
     }
+  },
+  "Navigation": {
+    "weather": "Weather",
+    "history": "History"
   }
 }
