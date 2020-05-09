@@ -1,4 +1,125 @@
 .App {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: row;
+  font-family: arial, sans-serif;
+  font-size: 1em;
+}
+
+.App-navigation {
+  width: 60px;
+  z-index: 10;
+}
+
+.App-navigation-content {
+  width: 60px;
+  height: 100%;
+  background: #4d4d6e;
+  transition: width 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.App-navigation-content:hover {
+  width: 240px;
+}
+
+.App-navigation-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 240px;
+  height: 50px;
+  padding: 10px;
+  border-left: 3px solid transparent;
+  box-sizing: border-box;
+  overflow: hidden;
+  color: white;
+  text-decoration: none;
+}
+
+.App-navigation-button.active {
+  border-color: white;
+}
+
+.App-navigation-button.active:hover {
+  border-color: lightgrey;
+}
+
+.App-navigation-button svg {
+  width: 30px;
+  height: 30px;
+  padding-right: 20px;
+}
+
+.App-navigation-button:hover {
+  color: lightgrey;
+}
+
+.App-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-image: url('./background.png');
+  background-size: cover;
+}
+
+.App-panel {
+  width: 100%;
+  max-width: 450px;
+  padding: 10px;
+  background: #d9d9d9ba;
+  border-radius: 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .App-navigation-content {
+    width: 240px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .App-navigation {
+    position: absolute;
+    bottom: 0;
+    width: 100% !important;
+    height: 50px !important;
+    z-index: 10;
+  }
+
+  .App-navigation-content {
+    width: 100% !important;
+    height: 50px !important;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .App-navigation-button {
+    width: 50px;
+    border-left: unset;
+    border-bottom: 3px solid transparent;
+    color: lightgrey;
+  }
+
+  .App-navigation-button svg {
+    padding: 0;
+  }
+
+  .App-navigation-button span {
+    display: none;
+  }
+
+  .App-navigation-button.active {
+    color: white;
+  }
+
+  .App-panel {
+    max-width: calc(100vw - 40px);
+  }
 }
