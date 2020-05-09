@@ -1,2 +1,16 @@
 {
+  "cities": {
+    "Moscow": "Moscow",
+    "Saint Petersburg": "Saint Petersburg",
+    "New York": "New York"
+  },
+  "WeatherResult": {
+    "item": {
+      "min": "min:",
+      "max": "max:",
+      "feels": "feels like:",
+      "pressure": "Atmosphere pressure:",
+      "pressureValue": "${{value}} hPa"
+    }
+  }
 }

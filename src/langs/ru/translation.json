@@ -1,2 +1,20 @@
 {
+  "cities": {
+    "Moscow": "Москва",
+    "Saint Petersburg": "Санкт-Петербург",
+    "New York": "Нью-Йорк"
+  },
+  "WeatherResult": {
+    "item": {
+      "min": "минимум:",
+      "max": "максимум:",
+      "feels": "как:",
+      "pressure": "давление:",
+      "pressureValue": "{{value}} гПа"
+    }
+  },
+  "Navigation": {
+    "weather": "Погода",
+    "history": "История"
+  }
 }
