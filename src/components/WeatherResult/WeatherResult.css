@@ -1,0 +1,24 @@
+.WeatherResult {
+  display: flex;
+  flex-direction: column;
+}
+
+.WeatherResult-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.WeatherResult-cityName {
+}
+
+.WeatherResult-date {
+}
+
+.WeatherResult-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.WeatherResult-item-date {
+}
