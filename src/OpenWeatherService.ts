@@ -27,6 +27,13 @@ export const OpenWeatherService = new class OpenWeatherService {
         params.append('q', cityQuery.city);
       }
       break;
+    case 'coords':
+      params.append('lat', `${cityQuery.lat}`);
+      params.append('lon', `${cityQuery.lon}`);
+      break;
+    case 'zip':
+      params.append('zip', `${cityQuery.zipcode},${cityQuery.countryCode}`);
+      break;
     }
     if (units !== undefined) {
       switch (units) {
@@ -103,7 +110,6 @@ export interface Coords {
 }
 export type CityQuery = (
   | { type: 'query'; city: string; state?: string; countryCode?: string }
-  | { type: 'id'; cityId: string }
   | { type: 'coords' } & Coords
   | { type: 'zip'; zipcode: number; countryCode: string }
 );

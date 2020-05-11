@@ -21,6 +21,13 @@ export function CitySelector({ onCityQueryChange, onChange: onChangeProp, ...pro
     { value: 'predefined.Moscow', label: t('cities.Moscow'), query: { type: 'query', city: 'Moscow' } },
     { value: 'predefined.Saint Petersburg', label: t('cities.Saint Petersburg'), query: { type: 'query', city: 'Saint Petersburg' } },
     { value: 'predefined.New York', label: t('cities.New York'), query: { type: 'query', city: 'New York' } },
+    { value: 'predefined.London', label: t('cities.London'), query: { type: 'query', city: 'London' } },
+    { value: 'predefined.Ufa', label: t('cities.Ufa'), query: { type: 'query', city: 'Ufa' } },
+    { value: 'predefined.Vancouver', label: t('cities.Vancouver'), query: { type: 'query', city: 'Vancouver' } },
+    { value: 'predefined.Vladivostok', label: t('cities.Vladivostok'), query: { type: 'query', city: 'Vladivostok' } },
+    { value: 'predefined.Kazan', label: t('cities.Kazan'), query: { type: 'query', city: 'Kazan' } },
+    { value: 'predefined.Sacramento', label: t('cities.Sacramento'), query: { type: 'query', city: 'Sacramento' } },
+    { value: 'predefined.Zelenograd', label: t('cities.Zelenograd'), query: { type: 'query', city: 'Zelenograd' } },
   ], [ t ]);
 
   const onChange = React.useCallback((value: ValueType<CityOption>, actionMeta: ActionMeta<CityOption>) => {
@@ -36,6 +43,7 @@ export function CitySelector({ onCityQueryChange, onChange: onChangeProp, ...pro
   return (
     <Select
       {...props}
+      isClearable
       options={cityOptions}
       onChange={onChange}
       menuPortalTarget={document.body}

@@ -2,7 +2,14 @@
   "cities": {
     "Moscow": "Moscow",
     "Saint Petersburg": "Saint Petersburg",
-    "New York": "New York"
+    "New York": "New York",
+    "London": "London",
+    "Ufa": "Ufa",
+    "Vancouver": "Vancouver",
+    "Vladivostok": "Vladivostok",
+    "Kazan": "Kazan",
+    "Sacramento": "Sacramento",
+    "Zelenograd": "Zelenograd"
   },
   "WeatherResult": {
     "item": {
